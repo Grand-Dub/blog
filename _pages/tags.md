@@ -14,7 +14,7 @@ permalink: /tags
 <div class="table-wrapper" markdown="block">
 
 {%- for post in tag[1] -%}
-| [{{ post.title }}]({{ post.url }}) | *{{post.date | date: '%d/%m/%Y'}}* |
+| [{{ post.title }}]({{site.baseurl}}{{ post.url }}) | *{{post.date | date: '%d/%m/%Y'}}* |
 {% endfor %}  
 </div>
 

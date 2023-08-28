@@ -16,8 +16,9 @@
                         <h1 id="{{ page.id }}">{{ page.title | escape }}
                         {% if page.collection=='posts' %}
                             <div class="date-de-publication">
-                                <i class="fa fa-calendar"></i> Publié le {{page.date | date: '%d/%m/%Y'}}
+                                <i class="fa fa-calendar"></i> Mis à jour le {{page.date | date: '%d/%m/%Y'}}
                             </div>
+                            <hr/>
                         {% endif %}
                         </h1>
                     {% else %}

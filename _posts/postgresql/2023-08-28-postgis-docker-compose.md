@@ -6,7 +6,7 @@ tags:
   - PostgreSQL
 layout: post
 ---
-
+test
 Le fichier `.env` est nécessaire pour au moins définir: `POSTGRES_PASSWORD`
 
 Si le répertoire `docker-entrypoint-initdb.d/` contient des scripts (.sql ou .sh, éventuellement .sql.gz), ils sont exécutés dans l'ordre alphabétique lorsque `data` est vide.  

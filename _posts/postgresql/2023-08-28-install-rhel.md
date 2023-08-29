@@ -1,5 +1,5 @@
 ---
-title: Installation sous la famille RedHat
+title: PostgreSQL - Installation sous la famille RedHat
 date: 2023-08-28
 category: PostgreSQL
 tags:

@@ -2,8 +2,6 @@
 title: PostgreSQL - Installation sous la famille RedHat
 date: 2023-08-28
 category: PostgreSQL
-tags:
-  - PostgreSQL
 layout: post
 ---
 

@@ -125,7 +125,8 @@ qui marche avec docker/containerd comme infrastructure de containers sous-jacent
 
 job sur chaque noeud
 ====================
-On prend l'exemple d'un calcul de pi où le nombre de décimales est en argument (16 par défaut). Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>
+On prend l'exemple d'un calcul de pi où le nombre de décimales est en argument (16 par défaut).  
+Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>
 
 ### Dockerfile
 Après avoir récupérer les 2 fichiers .c de github et créer *docker-script.sh*

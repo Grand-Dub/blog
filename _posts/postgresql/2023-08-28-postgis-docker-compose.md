@@ -10,7 +10,7 @@ layout: post
 Le fichier `.env` est nécessaire pour au moins définir: `POSTGRES_PASSWORD`
 
 Si le répertoire `docker-entrypoint-initdb.d/` contient des scripts (.sql ou .sh, éventuellement .sql.gz), ils sont exécutés dans l'ordre alphabétique si `data` est vide.  
-- *exemple de contenu de ce répertoire*: [docker-entrypoint-initdb.tgz]({{ site.url }}/{{site.baseurl}}/assets/my-files/postgresql/docker-entrypoint-initdb.tgz)
+- *exemple de contenu de ce répertoire*: [docker-entrypoint-initdb.tgz]({{ site.url }}{{site.baseurl}}/assets/my-files/postgresql/docker-entrypoint-initdb.tgz)
 
 ```yaml
 # Connexion au container:

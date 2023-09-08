@@ -126,7 +126,7 @@ qui marche avec docker/containerd comme infrastructure de containers sous-jacent
 job sur chaque noeud
 ====================
 On prend l'exemple d'un calcul de pi où le nombre de décimales est en argument (16 par défaut).  
-Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>
+Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>{:target="_blank"}
 
 ### Dockerfile
 Après avoir récupérer les 2 fichiers .c de github et créer *docker-script.sh*
@@ -234,4 +234,4 @@ debug: false
 Autres
 ======
 
-- site de notes diverses (longhorn, ingress nginx, cert-manager...): <https://devopstales.github.io/kubernetes/ansible-k8s-install/>
+- site de notes diverses (longhorn, ingress nginx, cert-manager...): <https://devopstales.github.io/kubernetes/ansible-k8s-install/>{:target="_blank"}

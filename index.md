@@ -33,6 +33,6 @@ Mais aussi d'autres choses:
 - recettes de cuisine
 
 ---
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://github.com/sighingnow/jekyll-gitbook) 
+[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://github.com/sighingnow/jekyll-gitbook){:target="_blank"}
 
 ---

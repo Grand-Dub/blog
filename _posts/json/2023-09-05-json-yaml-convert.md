@@ -7,10 +7,10 @@ categories:
 layout: post
 ---
 
-> #### Remarques
+> ##### Remarques
 > 
 > - **Tutoriel sur JSON / *jq* :** <https://blog.cedrictemple.net/notes-pour-plus-tard/JQ-outil-de-parsing-et-d-analyse-de-json/>{:target="_blank"}
-> - Je préfère `Python` à `yq` parce que `yq` doit être installé plutôt via `wget` (notamment sous RedHat par exemple mais avec `snap` sous Ubuntu).  
+> - Je préfère `Python` à `yq` parce que `yq` doit être installé plutôt via `wget` (notamment sous RedHat par exemple, en revanche avec `snap` sous Ubuntu).  
 >   Mais une commande `yq` est, ici, extrêmement simple.  
 >   L'installation est cependant bien expliqué sur le site de l'auteur (attention cependant aux versions, le `README` n'est pas mis à jour): <https://github.com/mikefarah/yq/>{:target="_blank"}  
 {: .block-tip }
@@ -25,17 +25,17 @@ source: <https://lzone.de/blog/Convert-JSON-to-YAML-in-Linux-bash>{:target="_bla
 
 Dans l'ordre de mes préférences:
 
-### `Python`
+## `Python`
 ```sh
 python -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))' <input.json
 ```
 
-### `yq`
+## `yq`
 ```sh
 yq -oy input.json
 ```
 
-### `jq`
+## `jq`
 Place the following into `~/.jq`
 ```
 def yamlify2:
@@ -60,12 +60,12 @@ And convert using:
 jq -r yamlify2 input.json
 ```
 
-### `Ruby`
+## `Ruby`
 ```sh
 ruby -ryaml -rjson -e 'puts YAML.dump(JSON.parse(STDIN.read))' <input.json
 ```
 
-### `Perl`
+## `Perl`
 ```sh
 perl -MYAML -MJSON -0777 -wnl -e 'print YAML::Dump(decode_json($_))' input.json
 ```
@@ -75,10 +75,9 @@ perl -MYAML -MJSON -0777 -wnl -e 'print YAML::Dump(decode_json($_))' input.json
 YAML vers JSON
 ==============
 
-### *Remarque* : JSON sur une seule ligne
-```sh
-cat input.json |jq -c
-```
+> ##### JSON sur une seule ligne
+> `cat input.json |jq -c`
+{: .block-tip }
 
 ---
 
@@ -86,7 +85,7 @@ En CLI (idéalement Unix mais souvent utilisable sous Windows), selon les outils
 
 Dans l'ordre de mes préférences:  
 
-### `Python`
+## `Python`
 ```sh
 python -c 'import sys, yaml, json; print(json.dumps(yaml.load(sys.stdin.read(),Loader=yaml.FullLoader)))' <input.yaml
 ```
@@ -99,12 +98,12 @@ ou
 python -c 'import sys, yaml, json; print(json.dumps(yaml.load(sys.stdin.read(),Loader=yaml.FullLoader)))' <input.yaml | jq
 ```
 
-### `yq`
+## `yq`
 ```sh
 yq -oj input.yaml
 ```
 
-### `Ruby`
+## `Ruby`
 ```sh
 ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))' <input.yaml
 ```

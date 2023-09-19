@@ -9,6 +9,9 @@ author:           Grand Dub
 description: >
   Des notes sur mes connaissances en informatique
 
+# tracker:
+#   google_analytics: UA-123-essai
+
 version:          1.0
 gitbook_version:  3.2.3
 
@@ -25,7 +28,7 @@ toc:
   h_max: 3
 
 # customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     /assets/gitbook/images/favicon.ico
+favicon_path:     assets/gitbook/images/favicon.ico
 
 # markdown render engine.
 markdown:         kramdown

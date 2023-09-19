@@ -1,0 +1,11 @@
+{%-comment%}
+Retourne dans la variable "resultat" le post qui contient le "idGD" passé dans le paramètre nommé aussi "idGD"
+idGD est une clef que je défini dans le front matter -> c'est un id unique facultatif que je défine pour cette fonction de recherche
+Je ne l'est pas appelé "id" car c'est déjà défini dans une "page"
+{%-endcomment%}
+{%- for post in site.posts %}
+    {%-if post.idGD==include.idGD%}
+        {%- assign resultat=post %}
+        {%- break %}
+    {%-endif%}
+{%- endfor -%}

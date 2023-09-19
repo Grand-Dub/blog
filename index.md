@@ -36,3 +36,11 @@ Mais aussi d'autres choses:
 [![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://github.com/sighingnow/jekyll-gitbook){:target="_blank"}
 
 ---
+
+En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en $ \LaTeX $   
+Exemples:
+- $ e^{i\pi}=-1 $
+- $ n!=\prod_{k=1}^n k $
+- $ \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
+
+---

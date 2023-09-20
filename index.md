@@ -42,5 +42,7 @@ Exemples:
 - $ e^{i\pi}=-1 $
 - $ n!=\prod_{k=1}^n k $
 - $ \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
+- Surface de la courbe `f(x)`: $  \int_a^b f(x) dx $
+- Longueur de la courbe `f(x)`: $  \int_a^b \frac{dx}{\sqrt{1+(f'(x))^2}} $ (pas sûr, à vérifier)
 
 ---

@@ -6,8 +6,15 @@ title:            Grand Dub
 longtitle:        Le blog de Grand Dub
 author:           Grand Dub
 # email:            sighingnow@gmail.com
-description: >
-  Des notes sur mes connaissances en informatique
+description: Des notes sur mes connaissances en informatique
+
+locale: fr_FR
+lang: fr
+social:
+  name: Bruno Dubois
+  links:
+    - https://www.linkedin.com/in/bruno-dubois/
+    - https://github.com/grand-dub
 
 # tracker:
 #   google_analytics: UA-123-essai

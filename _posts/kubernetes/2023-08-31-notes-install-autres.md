@@ -1,8 +1,9 @@
 ---
 title: Kubernetes - Installation - Divers
-date: 2023-08-31
+date: 2023-09-21
 category: Kubernetes
 layout: post
+description: Notes sur l'installation de k8s et diverses autres informations telles que "Devenir root dans un POD"
 ---
 
 cgroup
@@ -96,7 +97,9 @@ systemctl enable containerd
 
 ```
 
-## K8S
+Installation de K8S
+===================
+
 ```sh
 cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -118,7 +121,7 @@ root dans un pod
 ================
 
 *kubectl exec* ne prend pas de paramètre *-u* comme *docker exec*.
-J'ai trouvé cet utilitaire: <https://github.com/ssup2/kpexec>  
+J'ai trouvé cet utilitaire: <https://github.com/ssup2/kpexec>{:target="_blank"}  
 qui marche avec docker/containerd comme infrastructure de containers sous-jacente à k8s (il y a une explication de son mode de fonctionnement).
 
 
@@ -128,7 +131,7 @@ job sur chaque noeud
 On prend l'exemple d'un calcul de pi où le nombre de décimales est en argument (16 par défaut).  
 Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>{:target="_blank"}
 
-### Dockerfile
+#### Dockerfile
 Après avoir récupérer les 2 fichiers .c de github et créer *docker-script.sh*
 
 > `docker-script.sh`
@@ -172,7 +175,7 @@ ENTRYPOINT [ "/pi.sh" ]
 CMD [ "" ]
 ```
 
-### manifest k8s
+#### manifest k8s
 
 ```yaml
 apiVersion: batch/v1

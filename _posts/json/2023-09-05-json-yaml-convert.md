@@ -1,10 +1,11 @@
 ---
 title: Conversions entre JSON & YAML
-date: 2023-09-05
+date: 2023-09-21
 categories: 
   - JSON
   - YAML
 layout: post
+description: Conversions entre JSON & YAML avec, en conclusion, la transformation de la sortie de la commande ad-hoc ansible en YAML
 ---
 
 > ##### Remarques

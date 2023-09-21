@@ -1,10 +1,11 @@
 ---
 title: PostGIS avec docker compose
-date: 2023-08-28
+date: 2023-09-21
 category: PostgreSQL
 tags:
   - PostGIS
 layout: post
+description: Déploiement "Docker Compose" de postgis (PostgreSQL avec l'extension "geodatas")
 ---
 
 Le fichier `.env` est nécessaire pour au moins définir: `POSTGRES_PASSWORD`

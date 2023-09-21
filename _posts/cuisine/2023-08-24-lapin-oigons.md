@@ -1,8 +1,9 @@
 ---
 title: Lapin aux oignons
-date: 2023-08-26
+date: 2023-09-21
 category: Cuisine
 layout: post
+description: Ma recette de Lapin aux oignons
 ---
 
 Pour 500g de lapin, 500g d’oignons  

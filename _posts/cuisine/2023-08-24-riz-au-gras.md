@@ -1,8 +1,9 @@
 ---
 title: Riz au gras
-date: 2023-08-26
+date: 2023-09-21
 category: Cuisine
 layout: post
+description: Ma recette de Riz au gras
 ---
 
 Commencer à cuire le riz dans de l'huile  

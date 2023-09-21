@@ -25,6 +25,9 @@ Ces dernières portent (par exemple) sur:
   - Docker
   - Ansible
   - Kubernetes
+- Autres
+  - Programmation: C, C++, Java, Python...
+  - ...
 
 
 ---
@@ -33,7 +36,8 @@ Mais aussi d'autres choses:
 - recettes de cuisine
 
 ---
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://github.com/sighingnow/jekyll-gitbook){:target="_blank"}
+Ce site utilise [![Jekyll Gitbook theme](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://github.com/sighingnow/jekyll-gitbook){:target="_blank"}  
+Le code source des pages est sur <https://github.com/grand-dub/blog/>{:target="_blank"} 
 
 ---
 
@@ -44,5 +48,11 @@ Exemples:
 - $ \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
 - Surface de la courbe `f(x)`: $  \int_a^b f(x) dx $
 - Longueur de la courbe `f(x)`: $  \int_a^b \frac{dx}{\sqrt{1+(f'(x))^2}} $ (pas sûr, à vérifier)
+
+---
+
+
+
+*Ce site comporte {{site.posts|size}} publications*
 
 ---

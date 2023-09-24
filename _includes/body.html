@@ -39,3 +39,18 @@
 </div>
 
 {% include mathjax.html %}
+
+{%- if site.debug==true -%}
+{%- comment -%}
+Liquid, c'est de la merde, dès qu'une variable existe, elle vaut true (vive JAVA qui ne marche pas comme ça). Donc il faut un test débile: ==true
+{%- endcomment -%}
+<script>
+console.log(
+    'informations issues du fichier _includes/body.html (à la fin):',
+        {
+            "page.title": "{{page.title}}",
+            "page.description":"{{page.description}}"
+        }
+    )
+</script>
+{%- endif -%}

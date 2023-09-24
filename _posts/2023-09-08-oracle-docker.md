@@ -1,11 +1,11 @@
 ---
 title: "Oracle dans Docker"
-date: 2023-09-21
+date: 2023-09-22
 category: Docker
 tags:
 - Oracle
 layout: post
-description: Lancement d'un container "SGBD Oracle" sous Docker et tests de connexion
+description: Lancement d'un container SGBD Oracle sous Docker et tests de connexion
 
 # variables
 oracleVersion: 21

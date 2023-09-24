@@ -320,7 +320,9 @@ sub,sup {
     font-size: x-small !important;
 }
 
+{%- comment %}
 /* LaTeX */
 .MathJax {
     font-size: 150% !important;
 }
+{%- endcomment %}

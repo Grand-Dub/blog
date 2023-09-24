@@ -25,7 +25,7 @@ Ces dernières portent (par exemple) sur:
   - Docker
   - Ansible
   - Kubernetes
-- Autres
+- autres:
   - Programmation: C, C++, Java, Python...
   - ...
 
@@ -41,18 +41,59 @@ Le code source des pages est sur <https://github.com/grand-dub/blog/>{:target="_
 
 ---
 
-En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en $ \LaTeX $   
-Exemples:
-- $ e^{i\pi}=-1 $
-- $ n!=\prod_{k=1}^n k $
-- $ \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
-- Surface de la courbe `f(x)`: $  \int_a^b f(x) dx $
-- Longueur de la courbe `f(x)`: $  \int_a^b \frac{dx}{\sqrt{1+(f'(x))^2}} $ (pas sûr, à vérifier)
+En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en $ \LaTeX $ (mais je pense qu'il est facile d'intégrer `MathJax` dans tous les autres thèmes`Jekyll`)   
+
+*Exemples:*
+- $ \displaystyle E=mc^2 $ &#8592;  Probablement la formule la plus **connue** (mais pas toujours **comprise**)  
+- $ \displaystyle e^{i\pi}=-1 $
+- $ \displaystyle 1+2+\cdots+n=\sum_{i=1}^{n}i = \frac{n(n+1)}{2} $
+- $ \displaystyle 1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^2 = \frac{n(n+1)(2n+1)}{6} $
+- $ \displaystyle n!=\prod_{k=1}^n k $
+- $ \displaystyle \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
+- Surface de la courbe `f(x)`: $ \displaystyle \int_a^b f(x) dx $
+- Longueur de la courbe `f(x)`: $ \displaystyle \int_a^b \frac{dx}{\sqrt{1+{f'(x)}^2}} $ (pas sûr, à vérifier)  
+- **Fibonacci:**  
+$$
+\displaystyle
+F{_0}=F{_1}=1  
+$$  
+$$  
+\displaystyle
+F{_{n+2}}=F{_{n+1}}+F{_{n}} ~,~ \forall n \in \mathbb{N} 
+$$  
+donc: $$
+\displaystyle
+F_{n}={\frac {1}{\sqrt {5}}}(\varphi_{1}^{n} - \varphi_{2}^{n}) ~,~ {\text{où }} \varphi_{1}={\frac {1+{\sqrt {5}}}{2}}  ~~ {\text{(nombre d'or}}\approx 1{,}6180339887{\text{)}} ~ ~ {\text{et}} ~ ~ \varphi_{2}={\frac {1-{\sqrt {5}}}{2}}=-{\frac {1}{\varphi_{1} }}
+$$  
+
+- **<u>Et cette formule, je ne sait pas ce que c'est, mais elle a de l'allure:</u>**    
+$$ \displaystyle
+\int_{\Omega}  \nabla \boldsymbol{\phi} : \nabla\boldsymbol{\psi} = 
+\int_{\Omega}\Big( (\nabla\times \boldsymbol{\phi}) \cdot (\nabla\times \boldsymbol{\psi}) + (\nabla 
+\cdot 
+\boldsymbol{\phi}) (\nabla \cdot \boldsymbol{\psi}) \Big)
+\\
+\displaystyle
+\quad + \int_{\partial \Omega} 
+\Big( \underbrace{\nabla_{\Gamma}(\boldsymbol{n}\cdot \boldsymbol{\phi}_n)\cdot 
+\boldsymbol{\psi}_{\Gamma}}_{\text{tangential}} - 
+\underbrace{(\nabla\cdot\boldsymbol{\phi}_{\Gamma})(\boldsymbol{n}\cdot\boldsymbol{\psi}_{n})}_{\text{normal}}
+\Big) $$ 
 
 ---
 
-
-
 *Ce site comporte {{site.posts|size}} publications*
+
+{% assign premiereLigne=true %}
+{% for post in site.posts %}
+  {% assign nb=post.categories|size %}
+  {% if nb==0 %}
+    {% if premiereLigne %}
+      {% assign premiereLigne=false %}
+**À ÉVITER, POSTS SANS CATÉGORIES:**  
+    {% endif %}
+- [{{ post.title }}]({{site.baseurl}}{{post.url}})  
+  {% endif %}
+{% endfor %}
 
 ---

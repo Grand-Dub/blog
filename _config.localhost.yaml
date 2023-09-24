@@ -1,6 +1,8 @@
 # CONFIGURATION LOCALE à lancer avec:
 # bundle exec jekyll serve -H 0.0.0.0 --config _config.localhost.yaml
 
+debug: true
+
 # Configurations
 title:            Grand Dub
 longtitle:        Le blog de Grand Dub

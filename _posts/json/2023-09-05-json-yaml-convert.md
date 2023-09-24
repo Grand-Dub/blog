@@ -1,6 +1,6 @@
 ---
 title: Conversions entre JSON & YAML
-date: 2023-09-21
+date: 2023-09-24
 categories: 
   - JSON
   - YAML
@@ -114,8 +114,31 @@ ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))' <input.yaml
 Commande `ansible` vers YAML
 ============================
 
-**todo**
+Ici, on va utiliser `yq` pour sa simplicité, plutôt que les autres méthodes de conversion *JSON vers YAML* expliquées dans cette publication.  
+Car le 1<sup>er</sup> objectif est de transformer la sortie d'une commande *ad-hoc* `ansible` en *JSON*.  
 
-`cat input.json |yq -oy -pj`
-
-voir <https://github.com/ansible/ansible/issues/8520>
+La commande `sed` qui transforme la sortie d'une commande *ad-hoc* `ansible` en *JSON*, en créant une clef `hostname` (pour ne pas perdre cette information):
+```sh
+sed -E -e 's/(.+) \| .+ => \{$/\{ "hostname": "\1",/' \
+       -e '1 i \[' -e 's/^\}$/\},/' -e '$ c \}' |sed '$ a \]'
+```
+Donc, on l'utilise par exemple comme ceci:
+```sh
+ansible all -m ping | \
+sed -E -e 's/(.+) \| .+ => \{$/\{ "hostname": "\1",/' \
+       -e '1 i \[' -e 's/^\}$/\},/' -e '$ c \}' |sed '$ a \]' | \
+yq -oy -pj
+```
+Et on obtient cette sortie:
+```yaml
+- hostname: 10.146.237.207
+  ansible_facts:
+    discovered_interpreter_python: /usr/bin/python3
+  changed: false
+  ping: pong
+- hostname: 10.146.237.111
+  ansible_facts:
+    discovered_interpreter_python: /usr/bin/python3
+  changed: false
+  ping: pong
+```

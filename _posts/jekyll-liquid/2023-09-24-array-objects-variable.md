@@ -43,4 +43,4 @@ on obtient:
 - {{ element.title }}  
 {%- endfor %}
 ```
-Au passage, on constate que le trie ne respecte pas la casse contrairement à ce que dit la documentation !
+Au passage, on constate que le tri ne respecte pas la casse contrairement à ce que dit la documentation !

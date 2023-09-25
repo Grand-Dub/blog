@@ -13,7 +13,7 @@ La documentation de *Liquid* annonce qu'il n'est pas possible de créer un table
 {% assign tableau="" | split: " " %}
 {% endraw %}
 ```
-Puis en utilisant des objets *Jekyll*, on peut alimenter ce `tableau`
+Puis en utilisant des objets *Jekyll* et le filtre `push` (fourni par *Jekyll*), on peut alimenter ce `tableau`
 ```liquid
 {%- raw %}
 {% for post in site.posts %}

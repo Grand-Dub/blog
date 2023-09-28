@@ -52,6 +52,7 @@ En autres raisons du choix de ce thème, il y a la prise en charge native de l'�
 - $ \displaystyle \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
 - Surface de la courbe `f(x)`: $ \displaystyle \int_a^b f(x) dx $
 - Longueur de la courbe `f(x)`: $ \displaystyle \int_a^b \frac{dx}{\sqrt{1+{f'(x)}^2}} $ (pas sûr, à vérifier)  
+
 - **Fibonacci:**  
 $$
 \displaystyle
@@ -59,7 +60,7 @@ F{_0}=F{_1}=1
 $$  
 $$  
 \displaystyle
-F{_{n+2}}=F{_{n+1}}+F{_{n}} ~,~ \forall n \in \mathbb{N} 
+F{_{n+2}}=F{_{n+1}}+F{_{n}} ~,~ \forall n \in \mathbb{N}^{+} 
 $$  
 donc: $$
 \displaystyle
@@ -84,8 +85,13 @@ $$ \displaystyle
 
 *Ce site comporte {{site.posts|size}} publications*
 
-{% assign premiereLigne=true %}
-{% for post in site.posts %}
+
+{%- comment %}
+Ici on cherche les posts sans catégorie, ce que je souhaite éviter
+{%- endcomment %}
+
+{%- assign premiereLigne=true %}
+{%- for post in site.posts %}
   {% assign nb=post.categories|size %}
   {% if nb==0 %}
     {% if premiereLigne %}
@@ -94,6 +100,6 @@ $$ \displaystyle
     {% endif %}
 - [{{ post.title }}]({{site.baseurl}}{{post.url}})  
   {% endif %}
-{% endfor %}
+{%- endfor %}
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: Lapin aux oignons
-date: 2023-09-21
+date: 2023-09-28
 category: Cuisine
 layout: post
 description: Ma recette de Lapin aux oignons

@@ -1,6 +1,6 @@
 ---
 title: Kubernetes - Installation - Divers
-date: 2023-09-22
+date: 2023-09-28
 category: Kubernetes
 layout: post
 description: "Notes sur l'installation de k8s et diverses autres informations telles que: Devenir root dans un POD"

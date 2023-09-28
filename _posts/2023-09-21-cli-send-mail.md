@@ -1,6 +1,6 @@
 ---
 title: Envoi d'email SMTP en CLI sous Linux
-date: 2023-09-25
+date: 2023-09-28
 categories: 
   - Divers
 layout: post

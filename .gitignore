@@ -3,3 +3,5 @@ _draft/
 .jekyll-cache/
 
 Gemfile.lock
+
+*.bak

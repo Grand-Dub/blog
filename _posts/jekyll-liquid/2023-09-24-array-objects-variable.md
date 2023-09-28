@@ -1,6 +1,6 @@
 ---
 title: "Liquid: tableau d'objets"
-date: 2023-09-24
+date: 2023-09-28
 categories: 
   - Jekyll - Liquid
 layout: post

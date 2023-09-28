@@ -1,6 +1,6 @@
 ---
 title: Conversions entre JSON & YAML
-date: 2023-09-24
+date: 2023-09-28
 categories: 
   - JSON
   - YAML

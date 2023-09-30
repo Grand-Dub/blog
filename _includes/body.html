@@ -54,3 +54,17 @@ console.log(
     )
 </script>
 {%- endif -%}
+
+{%- comment %}
+Gestionnaire de Cookies https://tarteaucitron.io/
+Ajout des services à Cookie (ici GA4)
+{% endcomment %}
+
+{%- if site.my_google_analytics_ID %}
+<script type="text/javascript">
+    tarteaucitron.user.gtagUa = '{{site.my_google_analytics_ID}}';
+    // tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+    tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+{% endif %}

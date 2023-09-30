@@ -16,8 +16,10 @@ social:
 version:          1.0
 gitbook_version:  3.2.3
 
-tracker:
-  google_analytics: G-J73RC3Z861
+# tracker:
+#   google_analytics: G-J73RC3Z861
+
+my_google_analytics_ID: G-J73RC3Z861
 
 url:              'https://grand-dub.github.io'
 baseurl:          '/blog'

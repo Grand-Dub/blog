@@ -326,3 +326,12 @@ sub,sup {
     font-size: 150% !important;
 }
 {%- endcomment %}
+
+{%- comment %}
+scroll horizontal dans LaTeX
+inspiration: https://stackoverflow.com/questions/66950313/horizontal-scrollbar-for-long-matjax-equations-in-html
+{%- endcomment %}
+.MathJax {
+    overflow-x: auto;
+    display: flex;
+}

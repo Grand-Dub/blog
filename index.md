@@ -41,17 +41,19 @@ Le code source des pages est sur <https://github.com/grand-dub/blog/>{:target="_
 
 ---
 
-En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en $ \LaTeX $ (mais je pense qu'il est facile d'intégrer `MathJax` dans tous les autres thèmes`Jekyll`)   
+En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en *LaTeX* (mais je pense qu'il est facile d'intégrer `MathJax` dans tous les autres thèmes`Jekyll`)   
 
 *Exemples:*
-- $ \displaystyle E=mc^2 $ &#8592;  Probablement la formule la plus **connue** (mais pas toujours **comprise**)  
+- $ \displaystyle E=mc^2 $  
+  Probablement la formule la plus **connue** (mais pas toujours **comprise**)  
 - $ \displaystyle e^{i\pi}=-1 $
 - $ \displaystyle 1+2+\cdots+n=\sum_{i=1}^{n}i = \frac{n(n+1)}{2} $
 - $ \displaystyle 1^2+2^2+\cdots+n^2=\sum_{i=1}^{n}i^2 = \frac{n(n+1)(2n+1)}{6} $
 - $ \displaystyle n!=\prod_{k=1}^n k $
 - $ \displaystyle \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
-- Surface de la courbe `f(x)`: $ \displaystyle \int_a^b f(x) dx $
-- Longueur de la courbe `f(x)`: $ \displaystyle \int_a^b \frac{dx}{\sqrt{1+{f'(x)}^2}} $ (pas sûr, à vérifier)  
+- **Surface de la courbe `f(x)`:** $ \displaystyle \int_a^b f(x) dx $
+- **Longueur de la courbe `f(x)`:** $ \displaystyle \int_a^b \frac{dx}{\sqrt{1+{f'(x)}^2}} $ ( 
+  pas sûr, à vérifier)  
 
 - **Fibonacci:**  
 $$

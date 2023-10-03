@@ -334,4 +334,5 @@ inspiration: https://stackoverflow.com/questions/66950313/horizontal-scrollbar-f
 .MathJax {
     overflow-x: auto;
     display: flex;
+    overflow-y: hidden;
 }

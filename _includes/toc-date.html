@@ -31,7 +31,7 @@
                         {%- else %}
                         <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                         {%- endif %}
-                            <a href="{{site.baseurl}}{{post.url}}">
+                            <a href="{{site.baseurl}}{{post.url}}" title="{{post.title | escape }}">
                                 {%- if collection.label=='pages' %}
                                     {%- case post.title | escape %}
                                         {% when "Catégories" %}

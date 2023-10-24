@@ -1,6 +1,6 @@
 ---
 title: Conversions entre JSON & YAML
-date: 2023-09-28
+date: 2023-10-24
 categories: 
   - JSON
   - YAML
@@ -11,7 +11,7 @@ description: Conversions entre JSON & YAML avec, en conclusion, la transformatio
 > ##### Remarques
 > 
 > - **Tutoriel sur JSON / *jq* :** <https://blog.cedrictemple.net/notes-pour-plus-tard/JQ-outil-de-parsing-et-d-analyse-de-json/>{:target="_blank"}
-> - Je préfère `Python` à `yq` parce que `yq` doit être installé plutôt via `wget` (notamment sous RedHat par exemple, en revanche avec `snap` sous Ubuntu).  
+> - Je préfère `Python` à `yq` parce que ce dernier doit être installé,en général, via `wget` (notamment sous RedHat par exemple, mais plus simplement avec `snap` sous Ubuntu).  
 >   Mais une commande `yq` est, ici, extrêmement simple.  
 >   L'installation est cependant bien expliqué sur le site de l'auteur (attention cependant aux versions, le `README` n'est pas mis à jour): <https://github.com/mikefarah/yq/>{:target="_blank"}  
 {: .block-tip }
@@ -114,7 +114,7 @@ ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))' <input.yaml
 Commande `ansible` vers YAML
 ============================
 
-Ici, on va utiliser `yq` pour sa simplicité, plutôt que les autres méthodes de conversion *JSON vers YAML* expliquées dans cette publication.  
+Ici, on va utiliser `yq` pour sa simplicité, plutôt que les autres méthodes de conversion *JSON vers YAML* expliquées dans cet article.  
 Car le 1<sup>er</sup> objectif est de transformer la sortie d'une commande *ad-hoc* `ansible` en *JSON*.  
 
 La commande `sed` qui transforme la sortie d'une commande *ad-hoc* `ansible` en *JSON*, en créant une clef `hostname` (pour ne pas perdre cette information):

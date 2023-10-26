@@ -1,6 +1,6 @@
 ---
 title: Kubernetes - Installation - Divers
-date: 2023-09-28
+date: 2023-10-26
 category: Kubernetes
 layout: post
 description: "Notes sur l'installation de k8s et diverses autres informations telles que: Devenir root dans un POD"
@@ -17,8 +17,7 @@ Pour travailler en mode hybride (v1 & v2):
 sudo dnf install -y grubby
 sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 ```
-Ainsi la procédure d'installation suivante fonctionne  
-*Je pense qu'il faut configurer containerd pour utiliser SystemdCgroup afin de rester en cgroup v2 unifié. Mais je n'ai pas réussi à le faire*
+Ainsi la procédure d'installation précédente fonctionne  
 
 **Pour connaître les versions de cgroup disponibles sur le système:**
 ```sh
@@ -30,6 +29,19 @@ nodev   cgroup
 nodev   cgroup2
 ```
 Ici, les 2 versions sont présentes
+
+*Je pense qu'il faut configurer containerd pour utiliser SystemdCgroup afin de rester en cgroup v2 unifié. Mais je n'ai pas réussi à le faire*  
+-> **J'ai trouvé:**  
+Après l'installation de *containerd* (plus loin), et renommer *config.toml* faire:
+```sh
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+```
+Puis:  
+- éditer `/etc/containerd/config.toml`
+- chercher: `[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]` section and change `SystemdCgroup` to `true`
+- redémarrer *containerd*
+- vérifier avec: `crictl info|python -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))'|less`
+  - `crictl` sera installé avec *k8s* et il faut rechercher `SystemdCgroup`
 
 
 Pré install
@@ -100,6 +112,9 @@ systemctl enable containerd
 Installation de K8S
 ===================
 
+Dépôt, packages et service *kubelet*
+------------------------------------
+
 ```sh
 cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -116,6 +131,69 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable --now kubelet
 
 ```
+
+Initialisation du *master* avec *calico*
+----------------------------------------
+
+**Initialisation sans CNI**
+
+```sh
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+> L'espace d'adresses IP spécifié ici: `10.244.0.0/16` doit être indiqué dans le fichier `https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/custom-resources.yaml` utilisé dans la *section 2* de l'installation de *calico* ci-dessous
+{: .block-warning }
+
+A l’issue de cette commande, la fin de la sortie ressemble à:  
+```sh
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.22.22.101:6443 --token qmroai.y8y12apxj95gbhmz \
+	--discovery-token-ca-cert-hash sha256:1132326b303b2b1a126f4ca365e48989ca9c003fda3f913ee5d775cfe80aba65 
+```
+
+**Le CNI: *calico***
+
+*calico* permet de faire fonctionner les *network policy*.  
+source: <https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart>{:target="_blank"} (à vérifier pour les n° de version)
+
+1. Install the Tigera Calico operator and custom resource definitions.  
+   `kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/tigera-operator.yaml`
+2. Install Calico by creating the necessary custom resource.  
+   `wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/custom-resources.yaml`  
+   Modifier le fichier téléchargé pour indiquer `cidr: 10.244.0.0/16`  
+   `kubectl create -f custom-resources.yaml`  
+3. Confirm that all of the pods are running with the following command.  
+   `watch kubectl get pods -n calico-system`  
+   Wait until each pod has the `STATUS` of `Running`.
+
+**Complétion automatique dans *bash* et alias "*k*"**
+
+```sh
+sudo kubectl completion bash|sudo tee /etc/bash_completion.d/kubectl
+```
+*Éditer `.bashrc`*
+```sh
+alias k='kubectl'
+source /usr/share/bash-completion/bash_completion
+complete -F __start_kubectl k
+```
+
 
 root dans un pod
 ================

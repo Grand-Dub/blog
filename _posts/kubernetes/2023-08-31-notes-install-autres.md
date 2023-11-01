@@ -1,6 +1,6 @@
 ---
 title: Kubernetes - Installation - Divers
-date: 2023-10-26
+date: 2023-10-31
 category: Kubernetes
 layout: post
 description: "Notes sur l'installation de k8s et diverses autres informations telles que: Devenir root dans un POD"
@@ -194,17 +194,45 @@ source /usr/share/bash-completion/bash_completion
 complete -F __start_kubectl k
 ```
 
+Service de métriques
+--------------------
 
-root dans un pod
+- Consulter <https://github.com/kubernetes-sigs/metrics-server>{:target="_blank"}
+- Télécharger le fichier proposé pour *apply* -> `wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
+- Modifier afin d'avoir l'*arg* "insecure":  
+  
+  ```yaml
+  containers:
+    - name: metrics-server
+      image: registry.k8s.io/metrics-server/metrics-server:v0.6.4
+      args:
+      - --kubelet-insecure-tls
+  ```
+
+
+*restart* d'un déploiement
+==========================
+
+Il faut passer par *rollout*. Tous les *pods* du déploiement redémarreront en fonction de la *strategy*.
+```sh
+kubectl rollout restart deployment <deploymentName>
+```
+
+
+Spécification dans Kubernetes
+=============================
+
+La référence de tout ce qu'on peut mettre dans un manifest *yaml* est définie ici: <https://kubernetes.io/docs/reference/kubernetes-api/>{:target="_blank"}
+
+
+*root* dans un pod
 ================
 
-*kubectl exec* ne prend pas de paramètre *-u* comme *docker exec*.
-J'ai trouvé cet utilitaire: <https://github.com/ssup2/kpexec>{:target="_blank"}  
-qui marche avec docker/containerd comme infrastructure de containers sous-jacente à k8s (il y a une explication de son mode de fonctionnement).
+*kubectl exec* ne prend pas de paramètre *-u* comme *docker exec*.  
+J'ai trouvé cet utilitaire: <https://github.com/ssup2/kpexec>{:target="_blank"} qui marche avec docker/containerd comme infrastructure de containers sous-jacente à k8s (il y a une explication de son mode de fonctionnement).
 
 
-
-job sur chaque noeud
+*job* sur chaque noeud
 ====================
 On prend l'exemple d'un calcul de pi où le nombre de décimales est en argument (16 par défaut).  
 Code: pi_css5 -> <https://github.com/xjtuecho/pi_css5>{:target="_blank"}

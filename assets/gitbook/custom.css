@@ -336,3 +336,7 @@ inspiration: https://stackoverflow.com/questions/66950313/horizontal-scrollbar-f
     display: flex;
     overflow-y: hidden;
 }
+
+img.emoji {
+    vertical-align: middle;
+}

@@ -1,6 +1,6 @@
 ---
 title: PostGIS avec docker compose
-date: 2023-09-28
+date: 2023-11-08
 category: PostgreSQL
 tags:
   - PostGIS
@@ -11,12 +11,13 @@ description: Déploiement Docker Compose de PostGIS (PostgreSQL avec l'extension
 Le fichier `.env` est nécessaire pour au moins définir: `POSTGRES_PASSWORD`
 
 Si le répertoire `docker-entrypoint-initdb.d/` contient des scripts (.sql ou .sh, éventuellement .sql.gz), ils sont exécutés dans l'ordre alphabétique si `data` est vide.  
-- *exemple de contenu de ce répertoire*: [docker-entrypoint-initdb.tgz]({{ site.url }}{{site.baseurl}}/assets/my-files/postgresql/docker-entrypoint-initdb.tgz)
+  :point_right: *exemple de contenu de ce répertoire*: [docker-entrypoint-initdb.tgz]({{ site.url }}{{site.baseurl}}/assets/my-files/postgresql/docker-entrypoint-initdb.tgz)
+
+*docker-compose.yaml*
 
 ```yaml
 # Connexion au container:
 # docker exec -it -u postgres postgis-postgreSQL-GIS-1 bash # ou psql
-
 
 version: '3'
 

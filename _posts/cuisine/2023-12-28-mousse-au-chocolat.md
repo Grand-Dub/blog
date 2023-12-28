@@ -11,8 +11,8 @@ Pour 6 personnes
 |         Ingrédients         |
 | :-------------------------: |
 |      175g de chocolat       |
-|           4 œufs           |
 |        30g de beurre        |
+|           4 œufs            |
 |        80g de sucre         |
 | 1 cuillerée à soupe de rhum |
 

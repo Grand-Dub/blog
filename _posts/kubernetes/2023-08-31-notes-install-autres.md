@@ -116,7 +116,7 @@ Dépôt, packages et service *kubelet*
 ------------------------------------
 > **REMARQUE**  
 > La version est référencée 2 fois en dur dans le fichier ```.repo```, on trouve les versions disponibles dans les release du projet: <https://github.com/kubernetes/kubernetes/releases>{:target="_blank"} ou <https://github.com/kubernetes/kubernetes/releases/latest>{:target="_blank"}  
-> Il suffit alors de ne référencer que les numéros *major et *minor*  
+> Il suffit alors de ne référencer que les numéros *major* et *minor*  
 {: .block-tip }
 
 ```sh

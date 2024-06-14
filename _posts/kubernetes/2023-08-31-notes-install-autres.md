@@ -115,8 +115,8 @@ Installation de K8S
 Dépôt, packages et service *kubelet*
 ------------------------------------
 > **REMARQUE**  
-> La version est référencée 2 fois en dur dans le fichier ```.repo```, on trouve les versions disponibles dans les release du projet: <https://github.com/kubernetes/kubernetes/releases>{:target="_blank"} ou <https://github.com/kubernetes/kubernetes/releases/latest>{:target="_blank"}
-> Il suffit alors de ne référencer que les numéros *major et *minor*
+> La version est référencée 2 fois en dur dans le fichier ```.repo```, on trouve les versions disponibles dans les release du projet: <https://github.com/kubernetes/kubernetes/releases>{:target="_blank"} ou <https://github.com/kubernetes/kubernetes/releases/latest>{:target="_blank"}  
+> Il suffit alors de ne référencer que les numéros *major et *minor*  
 {: .block-tip }
 
 ```sh
@@ -144,7 +144,7 @@ Initialisation du *master* avec *calico*
 ```sh
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
-> L'espace d'adresses IP spécifié ici: `10.244.0.0/16` doit être indiqué dans le fichier `https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/custom-resources.yaml` utilisé dans la *section 2* de l'installation de *calico* ci-dessous
+> L'espace d'adresses IP spécifié ici: `10.244.0.0/16` doit être indiqué dans le fichier `https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/custom-resources.yaml` utilisé dans la *section 2* de l'installation de *calico* ci-dessous  
 {: .block-warning }
 
 A l’issue de cette commande, la fin de la sortie ressemble à:  

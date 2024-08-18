@@ -1,6 +1,6 @@
 ---
 title: Clafoutis
-date: 2024-08-16
+date: 2024-08-17
 category: Cuisine
 layout: post
 description: Recette de clafoutis adapté d'une recette (notée probablement par ma Mamie) où tous les dosages sont en verre (?)
@@ -17,4 +17,4 @@ description: Recette de clafoutis adapté d'une recette (notée probablement par
 - Mélanger le tout l'un après l'autre
 - Ajouter une assiette creuse d'un fruit de votre choix (cerises, mirabelles...), et suivant la taille du fruit le couper en lamelles fines
 
-- Cuire à four moyen (thermostat 6) entre 30 et 40 minutes
+- Cuire à 200° entre 40 et 50 minutes

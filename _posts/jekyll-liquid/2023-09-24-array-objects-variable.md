@@ -1,8 +1,8 @@
 ---
 title: "Liquid: tableau d'objets"
-date: 2023-09-28
+date: 2024-08-19
 categories: 
-  - Jekyll - Liquid
+  - Jekyll-Liquid
 layout: post
 description: Technique pour faire un tableau en Liquid dont les éléments son issus d'objets Jekyll
 ---
@@ -43,4 +43,4 @@ on obtient:
 - {{ element.title }}  
 {%- endfor %}
 ```
-Au passage, on constate que le tri ne respecte pas la casse contrairement à ce que dit la documentation !
+Au passage, on constate comment que le tri respecte la casse !

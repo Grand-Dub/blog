@@ -43,4 +43,5 @@ on obtient:
 - {{ element.title }}  
 {%- endfor %}
 ```
-Au passage, on constate comment que le tri respecte la casse !
+> Au passage, on constate comment le tri respecte la casse !  
+> :point_right: Les minuscules sont après les majuscules et, ici, une majuscule accentuée est après les minuscules.  

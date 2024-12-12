@@ -41,7 +41,8 @@ Le code source des pages est sur <https://github.com/grand-dub/blog/>{:target="_
 
 ---
 
-En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en *LaTeX* (mais je pense qu'il est facile d'intégrer `MathJax` dans tous les autres thèmes`Jekyll`)   
+En autres raisons du choix de ce thème, il y a la prise en charge native de l'écriture de formules mathématiques en *LaTeX* (mais je pense qu'il est facile d'intégrer `MathJax` dans tous les autres thèmes`Jekyll`).   
+:point_right: Pour concevoir ces formules *LaTeX*, je me sert (par exemple) de : <https://latexeditor.lagrida.com/>{:target="_blank"} 
 
 ***Exemples:***
 

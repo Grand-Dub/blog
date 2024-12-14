@@ -1,6 +1,6 @@
 ---
 title: Calcul de l'intérêt cumulé d'un investissement
-date: 2024-12-12
+date: 2024-12-14
 category: Divers
 layout: post
 description: Calcul de l'intérêt cumulé d'un investissement 
@@ -67,10 +67,9 @@ Calculateur
 -----------
 {: style="text-align: center;"}
 
-> Sur un smartphone, on ne peut entrer que des entiers (pas de nombres à virgule) !  
-> Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript et je suis d'accord !)
+> * Sur un smartphone, on ne peut entrer que des entiers (pas de nombres à virgule) !  
+> * Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript et je suis d'accord !)
 {:.block-warning }
-{: style="text-align: center;"}
 
 <style>
 #calculateurForm {

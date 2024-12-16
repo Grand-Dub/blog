@@ -5,3 +5,5 @@ _draft/
 Gemfile.lock
 
 *.bak
+
+.jekyll-metadata

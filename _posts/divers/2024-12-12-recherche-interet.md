@@ -1,6 +1,6 @@
 ---
 title: Calcul de l'intérêt cumulé d'un investissement
-date: 2024-12-14
+date: 2024-12-16
 category: Divers
 layout: post
 description: Calcul de l'intérêt cumulé d'un investissement 
@@ -58,7 +58,7 @@ $$ \displaystyle
 & \\
 & \textbf{Exemple :} \\
 & a=10,\, b=100,\, N=5 \\
-& \Rightarrow x\simeq 0.585
+& \Rightarrow x\simeq 0.585 \, \text{(58.5 %)}
 
 \end{align}
 $$
@@ -67,8 +67,7 @@ Calculateur
 -----------
 {: style="text-align: center;"}
 
-> * Sur un smartphone, on ne peut entrer que des entiers (pas de nombres à virgule) !  
-> * Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript et je suis d'accord !)
+> Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript et je suis d'accord avec elle !)
 {:.block-warning }
 
 <style>
@@ -102,18 +101,17 @@ input {
 
 <div class="flexCenter">
 <form id="calculateurForm">
+{% comment %}
+Avant les boutons OK & Reset, je vais générer les paramètres dynamiquement, ils sont de même type (quand il y en aura plein, ce sera plus facile)  
+On peut rendre le calcul du résultat automatique/dynamique, cf : <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output> 
+{% endcomment %}
+{% assign parametres= "a,b,N" | split: "," %}
+{% for p in parametres %}
 <div>
-  <label for="a">a =</label> 
-  <input id="a" class="dataInput" type="number" step="any" placeholder="a" pattern="\d*" required="">
+  <label for="{{p}}">{{p}} =</label> 
+  <input id="{{p}}" name="{{p}}" class="dataInput" type="number" inputmode="decimal" step="any" placeholder="{{p}}" pattern="[0-9]*" required="">
 </div>
-<div>
-  <label for="b">b =</label> 
-  <input id="b" class="dataInput" type="number" step="any" placeholder="b" pattern="\d*" required="">
-</div>
-<div>
-  <label for="N">N =</label> 
-  <input id="N" class="dataInput" type="number" step="any" placeholder="N" pattern="\d*" required="">
-</div>
+{% endfor %}
 <div id="ok" class="flexCenter">
   <input type="submit" value="OK">
   <input type="reset">

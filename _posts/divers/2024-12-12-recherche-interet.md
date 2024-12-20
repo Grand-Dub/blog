@@ -34,11 +34,9 @@ src : <https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles
 
 Démonstration
 -------------
-{: style="text-align: center;"}
-
-$$ \displaystyle
+$$ 
+\displaystyle
 \begin{align}
-
 & a:\text{prix d'achat} \\
 & b:\text{prix de vente} \\
 & N:\text{nombre d'années de la période d'investissement} \\
@@ -59,15 +57,13 @@ $$ \displaystyle
 & \textbf{Exemple :} \\
 & a=10,\, b=100,\, N=5 \\
 & \Rightarrow x\simeq 0.585 \, \text{(58.5 %)}
-
 \end{align}
 $$
 
 Calculateur
 -----------
-{: style="text-align: center;"}
 
-> Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript et je suis d'accord avec elle !)
+> Si on respecte pas *a, b, N > 0*, le résultat a une certaine logique (celle de JavaScript qui me convient !)
 {:.block-warning }
 
 <style>
@@ -99,7 +95,7 @@ input {
 }
 </style>
 
-<div class="flexCenter">
+<div>
 <form id="calculateurForm">
 {% comment %}
 Avant les boutons OK & Reset, je vais générer les paramètres dynamiquement, ils sont de même type (quand il y en aura plein, ce sera plus facile)  

@@ -74,7 +74,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-  - _drafts
+#  - _drafts
   - README.md
   - LICENSE
   - '*.sh'

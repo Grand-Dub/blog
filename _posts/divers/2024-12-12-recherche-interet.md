@@ -1,6 +1,6 @@
 ---
 title: Calcul de l'intérêt cumulé d'un investissement
-date: 2024-12-16
+date: 2024-12-25
 category: Divers
 layout: post
 description: Calcul de l'intérêt cumulé d'un investissement 
@@ -12,7 +12,7 @@ description: Calcul de l'intérêt cumulé d'un investissement
 DES REMARQUES SUR LaTex
 -----------------------
 
-c'est est déjà indiqué sur la page d'Accueil : pour concevoir des formules/équations : <https://latexeditor.lagrida.com/>.    
+ceci est déjà indiqué sur la page d'Accueil : pour concevoir des formules/équations : <https://latexeditor.lagrida.com/>.    
 
 Pour ajouter, ici, des "&" au début de pleins de lignes, j'ai trouvé cette (bonne) méthode :
 * Select the lines.

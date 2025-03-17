@@ -63,14 +63,20 @@ En autres raisons du choix de ce thème, il y a la prise en charge native de l'�
   $ \displaystyle n!=\prod_{k=1}^n k $
 
 - **Intégrale de Dirichlet**
-  $ \displaystyle \int_0^{+\infty} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
+  $ \displaystyle {\large\int_0^{+\infty}} \frac{sin(x)}{x} dx = \frac{\pi}{2} $
 
 - **Surface de la courbe `f(x)`**
   $ \displaystyle \int_a^b f(x) dx $
 
+{% comment %}
+Pour changer la taille du symbole "intégrale", j'utilise ce qui est décrit dans l'image : https://latex-tutorial.com/wp-content/uploads/2021/05/Screenshot-2021-04-17-at-13.09.47-867x1024.png 
+Cette image montre la liste des tailles possibles:
+tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge, Huge
+il y a aussi des packages comme "bigints", mais je ne sais pas les utiliser dans cet environnement 
+{% endcomment %}
 - **Longueur de la courbe `f(x)`** 
-  $ \displaystyle \int_a^b \frac{dx}{\sqrt{1+{f'(x)}^2}} $
-  (pas sûr, à vérifier)  
+  $ \displaystyle {\LARGE\int_a^b} \frac{dx}{\sqrt{1+{f'(x)}^2}} $
+  (pas sûr, à vérifier !)  
 
 - **Fibonacci:**  
 $$ \displaystyle 

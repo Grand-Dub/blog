@@ -75,7 +75,7 @@ tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge, Hu
 il y a aussi des packages comme "bigints", mais je ne sais pas les utiliser dans cet environnement 
 {% endcomment %}
 - **Longueur de la courbe `f(x)`** 
-  $ \displaystyle {\LARGE\int_a^b} \frac{dx}{\sqrt{1+{f'(x)}^2}} $
+  $ \displaystyle {\Large\int_a^b} \frac{dx}{\small\sqrt{1+{f'(x)}^2}} $  
   (pas sûr, à vérifier !)  
 
 - **Fibonacci:**  

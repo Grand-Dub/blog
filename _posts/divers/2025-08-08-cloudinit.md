@@ -15,7 +15,7 @@ description: Mon fichier cloud-init pour VM Azure
 Ceci est mon fichier de configuration *cloud-init* pour VM Linux dans Azure.  
 
 :point_right:à adapter selon les besoins  
-:point_right:il y a en un autre exemple plus simple pour *multipass* (donc Ubuntu) [dans l'article {{resultat.title}}]({{resultat.url}})
+:point_right:il y a en un autre exemple plus simple pour *multipass* (donc Ubuntu) [dans l'article {{resultat.title}}]({{site.baseurl}}{{resultat.url}})
 
 
 #### Remarques

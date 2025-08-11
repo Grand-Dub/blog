@@ -1,6 +1,6 @@
 ---
 title: Exemple de fichier de configuration pour Cloud Init
-date: 2025-08-08
+date: 2025-08-09
 category: Divers
 tags:
 - Cloud Init
@@ -19,12 +19,12 @@ Ceci est mon fichier de configuration *cloud-init* pour VM Linux dans Azure.
 
 
 #### Remarques
-1. Adapter la clef `ssh_authorized_keys` ou la supprimer si non applicable
+1. **Adapter la clef `ssh_authorized_keys` ou la supprimer si non applicable**
 2. `ansible` est installé et cette configuration s'en sert pour lancer le Playbook défini dans le *cloud-init*
-3. Dans le playbook, il y a des choses spécifiques à Azure :
+3. Suppression de `postfix` (via le Playbook) curieusement installé par défaut sur Ubuntu (et peut être d'autres distributions)
+4. Dans le Playbook, il y a des choses spécifiques à Azure :
    - Configuration de `fail2ban` qui est lui-même installé directement par *cloud-init* (utile pour tout hôte avec une adresse IP publique)
    - Configuration d'un *swapfile* de 2Go
-   - Suppression de `postfix` curieusement installé par défaut sur Ubuntu (et peut être d'autres distributions)
 
 
 {% raw %}

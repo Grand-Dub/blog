@@ -78,7 +78,7 @@ Mais le port 80 est utilisé par le frontend de *HAProxy* et le script/serveur d
 Grâce à la méthode `Standalone HTTP Server`, on peut exécuter le script/serveur du package *acme* sur un autre port libre du *pfSense* (ici 12345 qu'il ne faut pas autoriser dans les règles de *Firewall*). Il faut donc, d'abord; faire une règle dans *HAProxy* qui redirige les demandes `.well-known/acme-challenge/` vers `localhost:12345`.
 
 #### Backend *HAProxy*
-**Remarquez le paramètre `Health check method` sur `none`**  
+**Remarquez le paramètre `Health check method` sur `none`**. En effet, le port 12345 n'est ouvert que lors de la demande ou le renouvellement d'un certificat par le service *acme*.   
 Définissons le backend sur `ACME-Challenge` (par exemple)
 ![backend/localhost/12345]({{site.baseurl}}/assets/images/acme-pfsense/backend-localhost-12345.png#center)
 
@@ -87,10 +87,22 @@ Définissons le backend sur `ACME-Challenge` (par exemple)
 ![frontend/acme]({{site.baseurl}}/assets/images/acme-pfsense/frontend-acme.png#center)
 
 #### Nouveau certificat *acme*
+Mettre un comment sur SAN pour pleins de fqdn à référencer dans le listener, ou utliser *SNI filter* dans le listener  
+![acme/certificate/main]({{site.baseurl}}/assets/images/acme-pfsense/acme-certificate-main.png#center)
 
+> N'oubliez pas de configurer la bonne action (tel que décrite dans les exemples). De cette manière, lors du renouvellement automatique, *acme* relancera *HAProxy* afin d'utiliser le nouveau certificat !
+{:.block-tip}
 
-faut clicker sur "issue/renew" sinon pas encore le cert!!! et hop plein  de bonnes lignes dans le portail
+![acme/certificate/action]({{site.baseurl}}/assets/images/acme-pfsense/acme-certificate-action.png#center)
 
+Après  avoir cliqué sur *Save*, cliquez sur *Issue/Renew* afin d'obtenir le nouveau certificat avec les logs complets, si vous actualisez, vous obtenez :   
+![acme/certificate/result]({{site.baseurl}}/assets/images/acme-pfsense/acme-certificate-result.png#center)
+
+#### Frontend *HTTPS*
+![frontend/https/1]({{site.baseurl}}/assets/images/acme-pfsense/frontend-https-1.png#center)  
+![frontend/https/2]({{site.baseurl}}/assets/images/acme-pfsense/frontend-https-2.png#center)
+![X-Forwarded-For]({{site.baseurl}}/assets/images/acme-pfsense/X-Forwarded-For.png#center)    
+![frontend/https/3]({{site.baseurl}}/assets/images/acme-pfsense/frontend-https-3.png#center)  
 
 
 Redirection HTTP vers HTTPS

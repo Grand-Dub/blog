@@ -14,10 +14,10 @@ description: Crème pour tarte aux fruits
 |                     Pâte brisée                     |
 | Fruits (2 pommes par exemple, souvent environ 800g) |
 |                        1 œuf                        |
-|                    1/4 l de lait                    |
+|                    1/4 litre de lait                     |
 |            1 cuillère à soupe de farine             |
 |            2 cuillères à soupe de sucre             |
-|             1 cuillerée à soupe de rhum             |
+|             1 cuillère à soupe de rhum              |
 
 - Placer la pâte brisée dans le moule, les fruits sur la pâte brisée
 

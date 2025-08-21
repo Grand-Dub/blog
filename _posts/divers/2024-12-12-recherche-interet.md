@@ -1,12 +1,13 @@
 ---
 title: Calcul de l'intérêt cumulé d'un investissement
-date: 2024-12-25
+date: 2025-08-13
 category: Divers
 layout: post
 description: Calcul de l'intérêt cumulé d'un investissement 
 ---
 
-#### Lorsqu'on achète quelque chose (immobilier, bourse...) qu'on finira par vendre des années plus tard, on peut savoir à quel taux d'intérêt cumulé par an cela correspond.
+> Lorsqu'on achète quelque chose (immobilier, bourse...) qu'on finira par vendre des années plus tard, on peut savoir à quel taux d'intérêt cumulé par an cela correspond.
+{:.block-tip}
 
 {% comment %}  
 DES REMARQUES SUR LaTex

@@ -22,23 +22,28 @@ Ce n'est pas forcément "Let's Encrypt" qui peut être choisi, le package *acme*
 Description de l'environnement de test
 ---------------------------------------
 
-- 1 VLAN contenant :
+- **1 VLAN contenant :**
   - 1 accès Internet via une IP publique connue. Ici : `1.2.3.4`
   - 1 serveur WEB accessible via son IP privée sur 80/tcp. Ici : `http://10.1.1.10:80`
   - 1 serveur *pfSense* accessible depuis Internet sur les ports TCP 80 et 443.   
 <br/>
-- Une zone DNS publique qui permet avec un enregistrement de type A. Ici : `test.granddub.fr <-> 1.2.3.4`  
+- **Une zone DNS publique pour `granddub.fr` avec un enregistrement de type A.**  
+  Ici : `test.granddub.fr <-> 1.2.3.4`  
 <br/>
-- Serveur *pfSense*
+- **Serveur *pfSense***
+  <br/>
   - port TCP pour le webConfigurator : 4433 uniquement (pas de HTTP)
     ![admin-only-ssl-with-other-port]({{site.baseurl}}/assets/images/acme-pfsense/admin-only-ssl-with-other-port.png#center)
+  <br/>
   - 1 seule carte réseau accessible sur le VLAN et depuis Internet sur les ports TCP 80 et 443 via `test.granddub.fr` ou `1.2.3.4`
   - package *HAProxy*  
 <br/>
-- Configuration *HAProxy*
+- **Configuration *HAProxy***  
+  <br/>
   - Un backend vers `http://10.1.1.10:80` (avec ou sans sonde de santé)
     ![backend général]({{site.baseurl}}/assets/images/acme-pfsense/backend-default.png#center)
-  - Un frontend général pour `http://1.2.3.4:80` et `http://test.granddub.fr:80` (sans ces indications) vers le backend (pour tester le reverse proxy)  
+  <br/>
+  - Un frontend général pour `http://1.2.3.4:80` et `http://test.granddub.fr:80` (sans préciser ces URI) vers le backend (pour tester le reverse proxy)  
     ![frontend général]({{site.baseurl}}/assets/images/acme-pfsense/frontend-general.png#center)
 
 <br/>
@@ -87,7 +92,7 @@ Définissons le backend sur `ACME-Challenge` (par exemple)
 ![frontend/acme]({{site.baseurl}}/assets/images/acme-pfsense/frontend-acme.png#center)
 
 #### Nouveau certificat *acme*
-Mettre un comment sur SAN pour pleins de fqdn à référencer dans le listener, ou utliser *SNI filter* dans le listener  
+Mettre un commentaire sur SAN pour pleins de fqdn à référencer dans le listener, ou utliser *SNI filter* dans le listener  
 ![acme/certificate/main]({{site.baseurl}}/assets/images/acme-pfsense/acme-certificate-main.png#center)
 
 > N'oubliez pas de configurer la bonne action (tel que décrite dans les exemples). De cette manière, lors du renouvellement automatique, *acme* relancera *HAProxy* afin d'utiliser le nouveau certificat !
